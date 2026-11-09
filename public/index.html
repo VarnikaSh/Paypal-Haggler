@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Haggler is an AI-powered negotiation platform connecting buyers and sellers through intelligent agents and secure PayPal payments.">
+
+    <title>Haggler | Intelligent Commerce</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#" class="brand" aria-label="Haggler home">
+                HAGGLER<span class="brand-period">.</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <a href="#workspace" class="nav-link active">Workspace</a>
+                <a href="#how-it-works" class="nav-link">How it works</a>
+            </nav>
+
+            <div class="nav-actions">
+
+                <span class="environment-badge">
+                    <span class="status-dot"></span>
+                    Sandbox environment
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="main-container">
+
+        <section class="page-intro" id="workspace">
+
+            <div class="intro-content">
+
+                <div class="breadcrumb">
+                    WORKSPACE <span>/</span> NEW NEGOTIATION
+                </div>
+
+                <h1>Negotiation workspace</h1>
+
+                <p>
+                    Configure transaction parameters and initiate an
+                    AI-mediated negotiation between independent buyer
+                    and seller agents.
+                </p>
+
+            </div>
+
+            <div class="platform-indicator">
+                <span class="platform-indicator-dot"></span>
+                AI negotiation platform
+            </div>
+
+        </section>
+
+        <section class="workspace-grid">
+
+            <section class="panel configuration-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-index">01</span>
+                        <h2>Transaction configuration</h2>
+
+                        <p>
+                            Define the commercial terms of the transaction.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <form id="dealForm">
+
+                    <div class="form-section">
+
+                        <h3>Product information</h3>
+
+                        <div class="field">
+
+                            <label for="item">
+                                Product or service name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="item"
+                                name="item"
+                                placeholder="Enter product name"
+                                maxlength="80"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <h3>Financial parameters</h3>
+
+                        <div class="field-grid">
+
+                            <div class="field">
+
+                                <label for="listPrice">
+                                    Listing price
+                                </label>
+
+                                <div class="currency-input">
+
+                                    <span>$</span>
+
+                                    <input
+                                        type="number"
+                                        id="listPrice"
+                                        name="listPrice"
+                                        placeholder="1,000.00"
+                                        min="0.01"
+                                        max="1000000"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="field">
+
+                                <label for="sellerMin">
+                                    Seller's minimum
+                                </label>
+
+                                <div class="currency-input">
+
+                                    <span>$</span>
+
+                                    <input
+                                        type="number"
+                                        id="sellerMin"
+                                        name="sellerMin"
+                                        placeholder="800.00"
+                                        min="0.01"
+                                        max="1000000"
+                                        step="0.01"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="buyerMax">
+                                Buyer's maximum budget
+                            </label>
+
+                            <div class="currency-input">
+
+                                <span>$</span>
+
+                                <input
+                                    type="number"
+                                    id="buyerMax"
+                                    name="buyerMax"
+                                    placeholder="900.00"
+                                    min="0.01"
+                                    max="1000000"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+                            <p class="field-description">
+                                Private financial limits are protected
+                                through server-side validation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-section">
+
+                        <h3>Negotiation preferences</h3>
+
+                        <div class="field">
+
+                            <label for="buyerStyle">
+                                Buyer's negotiation strategy
+                            </label>
+
+                            <select id="buyerStyle" name="buyerStyle">
+
+                                <option value="friendly">
+                                    Friendly and collaborative
+                                </option>
+
+                                <option value="aggressive">
+                                    Assertive and aggressive
+                                </option>
+
+                                <option value="strategic">
+                                    Strategic and analytical
+                                </option>
+
+                                <option value="budget">
+                                    Budget-conscious
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="sellerRules">
+                                Additional seller conditions
+
+                                <span class="optional-label">
+                                    Optional
+                                </span>
+
+                            </label>
+
+                            <textarea
+                                id="sellerRules"
+                                name="sellerRules"
+                                maxlength="200"
+                                rows="3"
+                                placeholder="Specify relevant product conditions or selling requirements."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-footer">
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                            id="startButton"
+                        >
+
+                            <span>Initiate negotiation</span>
+
+                            <span class="button-arrow" aria-hidden="true">
+                                &rarr;
+                            </span>
+
+                        </button>
+
+                        <p>
+                            Maximum 10 negotiation turns.
+                            Final transactions require approval from both parties.
+                        </p>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section class="panel activity-panel">
+
+                <div class="panel-header activity-header">
+
+                    <div>
+
+                        <span class="panel-index">02</span>
+
+                        <h2>Negotiation activity</h2>
+
+                        <p>
+                            Live interaction between buyer and seller agents.
+                        </p>
+
+                    </div>
+
+                    <span class="activity-status" id="liveIndicator">
+                        <span class="status-dot"></span>
+                        READY
+                    </span>
+
+                </div>
+
+                <div class="agents-container">
+
+                    <div class="agent-card">
+
+                        <div class="agent-identity">
+
+                            <div class="agent-avatar seller-avatar">
+                                S
+                            </div>
+
+                            <div>
+
+                                <h3>Seller agent</h3>
+
+                                <p>Seller representation</p>
+
+                            </div>
+
+                        </div>
+
+                        <span
+                            class="agent-status"
+                            id="sellerStatus"
+                        >
+                            Ready
+                        </span>
+
+                    </div>
+
+
+                    <div class="agent-card">
+
+                        <div class="agent-identity">
+
+                            <div class="agent-avatar buyer-avatar">
+                                B
+                            </div>
+
+                            <div>
+
+                                <h3>Buyer agent</h3>
+
+                                <p>Buyer representation</p>
+
+                            </div>
+
+                        </div>
+
+                        <span
+                            class="agent-status"
+                            id="buyerStatus"
+                        >
+                            Ready
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="conversation-section">
+
+                    <div class="conversation-header">
+
+                        <h3>Negotiation transcript</h3>
+
+                        <span id="turnCounter">
+                            0 / 10 turns
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="conversation"
+                        id="conversation"
+                        aria-live="polite"
+                        aria-label="AI negotiation transcript"
+                    >
+
+                        <div class="empty-conversation">
+
+                            <div class="empty-line"></div>
+
+                            <h3>Awaiting negotiation</h3>
+
+                            <p>
+                                The negotiation transcript will appear
+                                here after the transaction is initiated.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="deal-result"
+                    id="resultPanel"
+                    hidden
+                >
+
+                    <div class="result-divider"></div>
+
+                    <span class="result-label">
+                        NEGOTIATED PRICE
+                    </span>
+
+                    <h2 id="finalPrice">$0.00</h2>
+
+                    <h3 id="resultTitle">
+                        Agreement reached
+                    </h3>
+
+                    <p id="refereeReceipt"></p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <section
+            class="panel analysis-panel"
+            id="fairnessSection"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-index">03</span>
+
+                    <h2>Transaction analysis</h2>
+
+                    <p>
+                        A quantitative summary of the negotiated outcome.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="analysis-grid">
+
+                <div class="analysis-card score-card">
+
+                    <div class="score-ring">
+
+                        <span id="fairnessScore">0</span>
+
+                        <small>/100</small>
+
+                    </div>
+
+                    <div class="score-information">
+
+                        <h3>Fair Deal Score</h3>
+
+                        <p>
+                            Measures the agreed price's proximity
+                            to the midpoint of the acceptable
+                            buyer-seller price range.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="analysis-card metric-card">
+
+                    <span class="metric-label">
+                        Buyer savings
+                    </span>
+
+                    <strong id="buyerSavings">
+                        $0.00
+                    </strong>
+
+                    <span class="metric-description">
+                        Compared with original listing price
+                    </span>
+
+                </div>
+
+                <div class="analysis-card metric-card">
+
+                    <span class="metric-label">
+                        Seller margin
+                    </span>
+
+                    <strong id="sellerMargin">
+                        $0.00
+                    </strong>
+
+                    <span class="metric-description">
+                        Above the seller's private minimum
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="panel approval-panel"
+            id="approvalSection"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-index">04</span>
+
+                    <h2>Participant authorization</h2>
+
+                    <p>
+                        Both participants must independently
+                        authorize the agreed transaction.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="approval-content">
+
+                <div class="approval-information">
+
+                    <h3>Review and approve the agreement</h3>
+
+                    <p>
+                        Once both parties approve, the transaction
+                        becomes eligible for PayPal checkout.
+                    </p>
+
+                </div>
+
+
+                <div class="approval-actions">
+
+                    <button
+                        type="button"
+                        class="approval-button"
+                        id="sellerApprove"
+                    >
+                        Approve as seller
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="approval-button"
+                        id="buyerApprove"
+                    >
+                        Approve as buyer
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="approval-status"
+                id="approvalStatus"
+                aria-live="polite"
+            >
+                Awaiting participant authorization.
+            </div>
+
+        </section>
+
+        <section
+            class="panel payment-panel"
+            id="paymentSection"
+            hidden
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-index">05</span>
+
+                    <h2>Payment settlement</h2>
+
+                    <p>
+                        Complete the transaction through PayPal Sandbox.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="payment-summary">
+
+                <div>
+
+                    <span>Agreed transaction amount</span>
+
+                    <strong id="paymentAmount">
+                        $0.00
+                    </strong>
+
+                </div>
+
+                <span class="payment-status-label">
+                    Both parties approved
+                </span>
+
+            </div>
+
+
+            <div
+                id="paypal-button-container"
+                aria-label="PayPal checkout"
+            ></div>
+
+
+            <div
+                id="paymentStatus"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+        <section
+            class="panel receipt-panel"
+            id="receiptSection"
+            hidden
+        >
+
+            <div class="receipt-header">
+
+                <div class="receipt-check">
+                    &#10003;
+                </div>
+
+                <span class="receipt-label">
+                    TRANSACTION COMPLETED
+                </span>
+
+                <h2>Transaction successfully completed</h2>
+
+                <p>
+                    PayPal has confirmed the payment capture.
+                    Your transaction details are available below.
+                </p>
+
+            </div>
+
+
+            <div
+                id="receiptDetails"
+                class="receipt-details"
+            ></div>
+
+        </section>
+
+        <section
+            class="how-section"
+            id="how-it-works"
+        >
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-index">OVERVIEW</span>
+
+                    <h2>How Haggler works</h2>
+
+                    <p>
+                        A structured negotiation and payment workflow.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-grid">
+
+                <article class="workflow-card">
+
+                    <span class="workflow-number">01</span>
+
+                    <h3>Define transaction limits</h3>
+
+                    <p>
+                        Buyers and sellers establish their
+                        private financial constraints.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-card">
+
+                    <span class="workflow-number">02</span>
+
+                    <h3>AI-mediated negotiation</h3>
+
+                    <p>
+                        Independent AI agents exchange offers
+                        within their respective constraints.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-card">
+
+                    <span class="workflow-number">03</span>
+
+                    <h3>Authorize and settle</h3>
+
+                    <p>
+                        Both participants approve the agreement
+                        before PayPal processes the payment.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <a href="#" class="brand footer-brand">
+                HAGGLER<span class="brand-period">.</span>
+            </a>
+
+            <p>
+                Intelligent negotiation. Transparent transactions.
+            </p>
+
+            <span>
+                Powered by Claude AI and PayPal
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

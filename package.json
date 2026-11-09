@@ -1,0 +1,28 @@
+{
+  "name": "paypal-haggler",
+  "version": "1.0.0",
+  "description": "AI-powered buyer-seller negotiation with PayPal payments",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "paypal",
+    "ai",
+    "claude",
+    "negotiation",
+    "hackathon"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
+  }
+}    

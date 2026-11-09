@@ -77,6 +77,8 @@ The application follows this workflow:
 8. PayPal Sandbox processes the payment.
 9. The application verifies payment capture and generates a transaction receipt.
 
+![PayPal Haggler Architecture](docs/architecture.png)
+
 ## 6. Project Structure
 
 ```text
